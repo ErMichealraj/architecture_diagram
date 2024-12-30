@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layered Architecture Diagram</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 90%;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .layer {
+            padding: 20px;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .layer-title {
+            font-size: 1.5rem;
+            color: #ffffff;
+            background-color: #007bff;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #dcdcdc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .sub-container {
+            display: grid;
+            grid-template-rows: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 10px;
+        }
+
+        /* Print-Specific Styles */
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr); /* Stack layers vertically for print */
+                gap: 10px;
+            }
+
+            .layer {
+                border: 1px solid #000; /* Make borders black for print clarity */
+                box-shadow: none;
+            }
+
+            .layer-title {
+                background-color: #000; /* Black background for better visibility in print */
+                color: #fff;
+            }
+
+            .item {
+                background-color: white;
+                border: 1px solid #000;
+                color: #000;
+            }
+
+            .arrow {
+                font-size: 1.2rem;
+                color: black;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Front End Layer -->
+        <div class="layer">
+            <div class="layer-title">Front End (Presentation Layer)</div>
+            <div class="sub-container">
+                <div class="item">Tutor Portal</div>
+                <div class="item">Admin Dashboard</div>
+                <div class="item">Student Portal</div>
+                <div class="item">Web/Mobile Application</div>
+            </div>
+        </div>
+
+        <!-- Database Layer -->
+        <div class="layer">
+            <div class="layer-title">Database Layer</div>
+            <div class="sub-container">
+                <div class="item">User Database</div>
+                <div class="item">Booking Database</div>
+                <div class="item">Payment Database</div>
+                <div class="item">External Service</div>
+                <div class="item">Payment Gateway</div>
+                <div class="item">Notification Service</div>
+            </div>
+        </div>
+
+        <!-- Back End Layer -->
+        <div class="layer">
+            <div class="layer-title">Back End (Application Layer)</div>
+            <div class="sub-container">
+                <div class="item">API Layer</div>
+                <div class="item">Payment Processing Service</div>
+                <div class="item">Business Logic Layer</div>
+                <div class="item">User Management Service</div>
+                <div class="item">Hosting/Infrastructure</div>
+                <div class="item">Cloud Provider</div>
+                <div class="item">Load Balancer</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="arrow">⬅️ Search and Book Classes ➡️</div>
+    <div class="arrow">➡️ Make Payment ➡️</div>
+</body>
+
+</html>
